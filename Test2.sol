@@ -10,6 +10,7 @@ contract Test2 {
     }
     
     function transferInEqualParts(uint256 summaryAmount, address [] recipients) public {
+	require (msg.value >= summaryAmount);
         uint256 part = summaryAmount/recipients.length;
         
         for (uint256 i = 0; i < recipients.length; i++) { 
